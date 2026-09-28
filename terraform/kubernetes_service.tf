@@ -24,7 +24,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
 }
 
 #
-# Grant AKS permission to pull images from your ACR
+# Grant AKS permission to pull images from ACR
 #
 resource "azurerm_role_assignment" "acr_pull" {
     principal_id                     = azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id

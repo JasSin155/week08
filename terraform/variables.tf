@@ -30,7 +30,7 @@ variable "storage_account_name" {
             can(regex("^[a-z0-9]+$", var.storage_account_name))
         )
 
-        error_message = "The storage account name must contain 3–24 lowercase letters and numbers."
+        error_message = "The storage account name must contain 3-24 lowercase letters and numbers."
     }
 }
 
@@ -47,7 +47,7 @@ variable "aks_dns_prefix" {
 variable "aks_node_count" {
     description = "Number of nodes in the default AKS node pool"
     type        = number
-    default     = 3
+    default     = 2
 
     validation {
         condition     = var.aks_node_count >= 1
@@ -78,6 +78,6 @@ variable "tags" {
     default = {
         Project    = "KoalaTech Course Platform"
         ManagedBy  = "Terraform"
-        Practical  = "Week08"
+        Practical  = "Task10.2D"
     }
 }
