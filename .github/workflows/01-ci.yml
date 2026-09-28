@@ -314,6 +314,7 @@ jobs:
           command: cves
           image: ${{ needs.terraform-apply.outputs.acr_login_server }}/${{ matrix.image }}:${{ github.sha }}
           only-severities: critical,high
+          only-fixed: "true"
           exit-code: "1"
 
       - name: Push Docker image with commit SHA
